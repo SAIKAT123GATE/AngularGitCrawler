@@ -1,0 +1,33 @@
+<div class="container mb-5">
+  <form class="form-inline mt-4 d-flex justify-content-center" (ngSubmit)="handleSubmit()">
+    <div class="col-auto">
+      <label for="name" class="visually-hidden">Password</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Enter User Name"
+        required
+        name="userName"
+        [(ngModel)]="userName"
+      />
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3">
+        Find User
+      </button>
+    </div>
+  </form>
+
+  <!-- to render error -->
+  <!-- <div class="alert alert-danger m-5" role="alert">Error</div> -->
+
+  <div class="row mt-3 mb-2">
+    <div class="col col-md-4">
+      <app-user-card [user]="user" *ngIf="user"></app-user-card>
+    </div>
+    <div class="col col-md-8" *ngIf="user" style="overflow: scroll;">
+      <app-repos [repoUrl]="user['repos_url']"></app-repos>
+    </div>
+  </div>
+</div>

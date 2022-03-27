@@ -1,0 +1,24 @@
+<div class="card ">
+    <div class="background bg-info">
+      <img
+        class="img-fluid rouded-circle profile-pic border-2 border-white"
+        [src]="user?.avatar_url"
+        alt="avatar"
+        height="30"
+      />
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">
+       {{user?.name}}
+      </h5>
+      <p class="card-text">BIO: {{user?.bio?user.bio:"Not Mentioned"}}</p>
+      <p class="card-text">Followers: {{user?.followers}}</p>
+      <p class="card-text">Email: {{user?.email?user.email:"Not Mentioned"}}</p>
+      <p class="card-text">
+        Created at:
+        {{user?.created_at | date:'medium'}}
+
+      </p>
+    </div>
+  </div>
